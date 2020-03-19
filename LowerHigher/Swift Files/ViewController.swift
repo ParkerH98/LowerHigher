@@ -36,7 +36,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var userGuess: UITextField!
     
     
-        var guessedNumberVar = 0
         var attemptsCounter = 0
         var upperBound = 100
         var lowerBound = 0
