@@ -10,7 +10,7 @@
         <!--Instructions Screen-->
         <scene sceneID="iTH-Rg-9lf">
             <objects>
-                <viewController id="1mM-Xa-PFo" userLabel="Instructions Screen" sceneMemberID="viewController">
+                <viewController id="1mM-Xa-PFo" userLabel="Instructions Screen" customClass="ViewController" customModule="LowerHigher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="1l5-6B-5od">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -95,7 +95,7 @@
         <!--Main Menu-->
         <scene sceneID="Ehk-Ao-de5">
             <objects>
-                <viewController modalTransitionStyle="crossDissolve" id="wsu-df-xaX" userLabel="Main Menu" sceneMemberID="viewController">
+                <viewController modalTransitionStyle="crossDissolve" id="wsu-df-xaX" userLabel="Main Menu" customClass="ViewController" customModule="LowerHigher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oCB-BN-YMx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -221,7 +221,7 @@
         <!--Blackout Mode-->
         <scene sceneID="uPG-tK-frv">
             <objects>
-                <viewController id="GB2-Xv-EW4" userLabel="Blackout Mode" sceneMemberID="viewController">
+                <viewController id="GB2-Xv-EW4" userLabel="Blackout Mode" customClass="BlackoutMode" customModule="LowerHigher" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="alT-nj-uL4">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -243,6 +243,9 @@
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="resetButton:" destination="GB2-Xv-EW4" eventType="touchUpInside" id="nJt-9B-sog"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ATTEMPTS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="amg-ve-zQp">
                                         <rect key="frame" x="141" y="14" width="132" height="50"/>
@@ -261,7 +264,7 @@
                                             <constraint firstAttribute="height" constant="24" id="weL-xu-l4h"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.37647058820000001" green="0.49019607840000001" blue="0.5450980392" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C3o-RG-9NC">
@@ -315,6 +318,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="higherButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fhK-9r-QIN"/>
+                                    <action selector="higherButton:" destination="GB2-Xv-EW4" eventType="touchUpInside" id="nQu-04-F3h"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Type Guess Here" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="113-fQ-G3U">
@@ -331,6 +335,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="editingDidBegin:" destination="GB2-Xv-EW4" eventType="editingDidBegin" id="6lI-Gv-xqg"/>
+                                    <action selector="editingDidEnd:" destination="GB2-Xv-EW4" eventType="editingDidEnd" id="BLg-Kt-wFg"/>
                                     <action selector="setEditableOff:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="A3v-zv-Qwe"/>
                                     <action selector="startedEditing:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="SJc-ym-Oul"/>
                                 </connections>
@@ -358,6 +364,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
+                                    <action selector="lowerButton:" destination="GB2-Xv-EW4" eventType="touchUpInside" id="AWs-CG-hfq"/>
                                     <action selector="lowerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w7B-CK-2iC"/>
                                 </connections>
                             </button>
@@ -382,6 +389,12 @@
                         <viewLayoutGuide key="safeArea" id="XE9-AU-HXs"/>
                     </view>
                     <navigationItem key="navigationItem" id="GHY-7T-2xT"/>
+                    <connections>
+                        <outlet property="attemptsCount" destination="1VI-4q-c0L" id="Sst-CZ-fZI"/>
+                        <outlet property="attemptsLabel" destination="amg-ve-zQp" id="Omf-cX-w7C"/>
+                        <outlet property="randomGenNumber" destination="XYl-IA-Lmg" id="p64-ST-0qA"/>
+                        <outlet property="userNumber" destination="113-fQ-G3U" id="OYe-bm-Pbn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOg-rf-xMe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

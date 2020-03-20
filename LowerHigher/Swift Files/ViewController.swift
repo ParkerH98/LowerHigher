@@ -21,19 +21,15 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         
         randomNumber = Int.random(in: lowerBound ... upperBound)
         divideNumber = randomNumber
-        guessedNumber.text = String(randomNumber)
-        
-     
-     
-        
+        guessedNumber?.text = String(randomNumber)
     }
 
 
     @IBOutlet weak var gameInstructions: UILabel!
     @IBOutlet weak var attemptsLabel: UILabel!
     @IBOutlet weak var attemptsCount: UILabel!
-    @IBOutlet weak var guessedNumber: UILabel!
-    @IBOutlet weak var userGuess: UITextField!
+    @IBOutlet weak var guessedNumber: UILabel! // random generated number to eval. against
+    @IBOutlet weak var userGuess: UITextField! // what the user types
     
     
         var attemptsCounter = 0
@@ -47,7 +43,6 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBAction func higherButton(_ sender: Any) {
         playSound()
         
-        // stops users from entering wrong lower vs higer evaluation
         let userGuessNum = Int(userGuess.text!) ?? 0
         let randomNum = Int(guessedNumber.text!) ?? 0
         
