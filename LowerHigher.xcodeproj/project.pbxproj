@@ -10,7 +10,7 @@
 		2C19E91623385B5A00C3C09E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C19E91523385B5A00C3C09E /* LaunchScreen.storyboard */; };
 		2C55029823AB5F7900C7759C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C55029723AB5F7900C7759C /* Assets.xcassets */; };
 		2CA676AA238747A800EADAEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CA676A9238747A800EADAEF /* Main.storyboard */; };
-		2CA676B623874A7A00EADAEF /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA676B523874A7A00EADAEF /* MainMenu.swift */; };
+		2CA676B623874A7A00EADAEF /* BlackoutMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA676B523874A7A00EADAEF /* BlackoutMode.swift */; };
 		2CA676B923874AD600EADAEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA676B723874AD600EADAEF /* AppDelegate.swift */; };
 		2CA676BA23874AD600EADAEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA676B823874AD600EADAEF /* ViewController.swift */; };
 		2CA7546E23A22C0B00799B47 /* stoneSound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2CA7546D23A22C0B00799B47 /* stoneSound.mp3 */; };
@@ -22,7 +22,7 @@
 		2C55029723AB5F7900C7759C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "Supporting Files/Assets.xcassets"; sourceTree = "<group>"; };
 		2CA676A9238747A800EADAEF /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2CA676B323874A4200EADAEF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CA676B523874A7A00EADAEF /* MainMenu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainMenu.swift; path = "LowerHigher/Swift Files/MainMenu.swift"; sourceTree = SOURCE_ROOT; };
+		2CA676B523874A7A00EADAEF /* BlackoutMode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BlackoutMode.swift; path = "LowerHigher/Swift Files/BlackoutMode.swift"; sourceTree = SOURCE_ROOT; };
 		2CA676B723874AD600EADAEF /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CA676B823874AD600EADAEF /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2CA7546D23A22C0B00799B47 /* stoneSound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = stoneSound.mp3; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				2CA676B723874AD600EADAEF /* AppDelegate.swift */,
 				2CA676B823874AD600EADAEF /* ViewController.swift */,
-				2CA676B523874A7A00EADAEF /* MainMenu.swift */,
+				2CA676B523874A7A00EADAEF /* BlackoutMode.swift */,
 			);
 			path = "Swift Files";
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			files = (
 				2CA676BA23874AD600EADAEF /* ViewController.swift in Sources */,
 				2CA676B923874AD600EADAEF /* AppDelegate.swift in Sources */,
-				2CA676B623874A7A00EADAEF /* MainMenu.swift in Sources */,
+				2CA676B623874A7A00EADAEF /* BlackoutMode.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
