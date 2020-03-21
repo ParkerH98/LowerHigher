@@ -18,7 +18,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Press higher button or lower button depending if the given number is higher or lower than your number." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bht-xD-11R">
                                 <rect key="frame" x="17" y="332" width="369" height="194"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
@@ -26,10 +26,10 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="When you see your number, press the correct button and follow the on-screen commands." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTk-Vx-JgB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The game will end when it has guessed your chosen number." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aTk-Vx-JgB">
                                 <rect key="frame" x="21" y="547" width="369" height="110"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
@@ -56,7 +56,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a number between 0-100. The app will try to guess your number." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YJU-l2-cE1">
                                 <rect key="frame" x="25" y="203" width="369" height="110"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="21"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                         <integer key="value" value="30"/>
@@ -581,6 +581,6 @@
         <image name="orangeRestart" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="V4g-Jc-AaL"/>
+        <segue reference="B2j-vg-0CD"/>
     </inferredMetricsTieBreakers>
 </document>
