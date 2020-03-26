@@ -13,6 +13,8 @@ import AVFoundation
 
 class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
     
+     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +43,7 @@ class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
     @IBOutlet weak var randomGenNumber: UILabel! // random generated number to eval. against
     @IBOutlet weak var userNumber: UITextField! // what number the user picks
     
+    /**
     
     
     @IBAction func higherButton(_ sender: Any) {
@@ -67,7 +70,8 @@ class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
             lowerBound = divideNumber + 1
         }
             
-        divideNumber = ((upperBound - lowerBound) / 2) + lowerBound
+        divideNumber = Int.random(in: lowerBound ... upperBound)
+        //divideNumber = ((upperBound - lowerBound) / 2) + lowerBound
             
         randomGenNumber.text = String(divideNumber)
         
@@ -101,8 +105,9 @@ class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
         else{
             upperBound = divideNumber - 1
         }
-            
-        divideNumber = ((upperBound - lowerBound) / 2) + lowerBound
+          
+        divideNumber = Int.random(in: lowerBound ... upperBound)
+        //divideNumber = ((upperBound - lowerBound) / 2) + lowerBound
             
         randomGenNumber.text = String(divideNumber)
         
@@ -136,7 +141,9 @@ class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
     
     func correctNumberButton(_ sender: UIButton?) {
         
-        let numberOfDrinks = abs(5 - attemptsCounter) + 1
+        let drinkUpperBound = abs(5 - attemptsCounter) + 3
+        
+        let numberOfDrinks = Int.random(in: 3 ... drinkUpperBound)
         
         if (attemptsCounter <= 5){
             displayAlert(title: "DRINK UP!", message: "You must take \(numberOfDrinks) drink(s)")
@@ -183,4 +190,5 @@ class BlackoutMode: UIViewController, AVAudioPlayerDelegate{
         
         userNumber.isUserInteractionEnabled = false
     }
+ */
 }
