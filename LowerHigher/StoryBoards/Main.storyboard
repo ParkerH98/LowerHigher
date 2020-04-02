@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wsu-df-xaX">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -543,7 +543,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="setEditableOff:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="YZ3-6S-IoI"/>
+                                    <action selector="editingDidEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="3Lr-Kh-h8r"/>
                                     <action selector="startedEditing:" destination="BYZ-38-t0r" eventType="editingDidBegin" id="NiC-qD-H5R"/>
                                 </connections>
                             </textField>
@@ -604,6 +604,6 @@
         <image name="LowerHigherResetIcon_Blue" width="33" height="33"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="B2j-vg-0CD"/>
+        <segue reference="GL3-Ha-5yl"/>
     </inferredMetricsTieBreakers>
 </document>

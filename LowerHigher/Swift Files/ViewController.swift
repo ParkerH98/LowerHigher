@@ -22,6 +22,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         randomNumber = Int.random(in: lowerBound ... upperBound)
         divideNumber = randomNumber
         guessedNumber?.text = String(randomNumber)
+        guessedNumber?.isHidden = true
     }
 
 
@@ -136,6 +137,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         userGuess.becomeFirstResponder()
         userGuess.text = "Play Again"
         userGuess.isUserInteractionEnabled = true
+        guessedNumber.isHidden = true
     }
     
 
@@ -171,10 +173,11 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
-    @IBAction func setEditableOff(_ sender: UITextField) {
-        
+    
+    @IBAction func editingDidEnd(_ sender: Any) {
         
         userGuess.isUserInteractionEnabled = false
+        guessedNumber.isHidden = false
     }
 }
 
