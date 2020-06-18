@@ -15,6 +15,9 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // used to exit out of numberpad with tap
+        
+        enableTapToExit()
         let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
         
         view.addGestureRecognizer(tap)
@@ -32,7 +35,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     @IBOutlet weak var guessedNumber: UILabel! // random generated number to eval. against
     @IBOutlet weak var userGuess: UITextField! // what the user types
     
-    
+
         var attemptsCounter = 0
         var upperBound = 100
         var lowerBound = 0
@@ -41,6 +44,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         var audioPlayer : AVAudioPlayer!
         
     
+    // executes code for main 'higher' button in game
     @IBAction func higherButton(_ sender: Any) {
         playSound()
         
@@ -74,7 +78,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         }
     }
     
-    
+    // executes code for main 'lower' button in game
     @IBAction func lowerButton(_ sender: Any) {
         playSound()
         let userGuessNum = Int(userGuess.text!) ?? 0
@@ -107,6 +111,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
+    // executed when correctNumberButton is pressed.
+    // button is automatically pressed when game guesses correct user number
     @IBAction func correctNumberButton(_ sender: UIButton?) {
         
         let numberOfDrinks = abs(5 - attemptsCounter) + 1
@@ -121,6 +127,7 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
+    // resets many aspects about the game when the reset button is pressed
     @IBAction func resetButton(_ sender: Any) {
         
         // resets all values
@@ -141,6 +148,8 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
 
+    // displays a pop up alert onto the screen
+    // with title and message as arguments
     func displayAlert (title:String, message:String){
         
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
@@ -151,7 +160,10 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
     }
     
     
+    // method to play sound when called upon
     func playSound(){
+        
+        // sounds can be changed by editing this code block
         let soundURL = Bundle.main.url(forResource: "stoneSound", withExtension: "mp3")
         
         do {
@@ -164,20 +176,52 @@ class ViewController: UIViewController, AVAudioPlayerDelegate {
         audioPlayer.play()
     }
     
-    
-    
+    // used with userGuess textField to execute actions when
+    // user begins editing text field
     @IBAction func startedEditing(_ sender: UITextField) {
         
         userGuess.text = ""
-        
+        SetDoneToolbar(field: userGuess)
     }
     
     
-    
+    // used with userGuess textField to execute actions when
+    // user is done editing text field
     @IBAction func editingDidEnd(_ sender: Any) {
         
-        userGuess.isUserInteractionEnabled = false
-        guessedNumber.isHidden = false
+        if (userGuess.text != ""){
+            
+            userGuess.isUserInteractionEnabled = false
+            guessedNumber.isHidden = false
+        }
+    }
+    
+    
+    // adds "done" button to numberpad
+    func SetDoneToolbar(field:UITextField) {
+        
+        let doneToolbar:UIToolbar = UIToolbar()
+
+        doneToolbar.items=[
+            UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil),
+            UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: #selector(ViewController.dismissKeyboard))
+        ]
+
+        doneToolbar.sizeToFit()
+        field.inputAccessoryView = doneToolbar
+    }
+    
+    // helper method used with SetDoneToolbar method
+    @objc func dismissKeyboard (){
+        userGuess.resignFirstResponder()
+    }
+    
+    
+    // enables functionality to tap screen to exit number pad
+    func enableTapToExit (){
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing))
+        
+        view.addGestureRecognizer(tap)
     }
 }
-
